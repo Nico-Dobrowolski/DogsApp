@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DogsApp.Views.DetailDog"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding MyTitre}">
+    <StackLayout>
+        <!--  Principal  -->
+        <StackLayout BackgroundColor="#FFB300" HeightRequest="350">
+            <!--  Main image  -->
+
+            <Frame
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="10"
+                Padding="-20"
+                CornerRadius="100"
+                HasShadow="True"
+                HeightRequest="200"
+                HorizontalOptions="Center"
+                IsClippedToBounds="True"
+                WidthRequest="200">
+                <Image
+                    HorizontalOptions="Center"
+                    Source="{Binding SelectedDog.Url}"
+                    VerticalOptions="Center" />
+            </Frame>
+            <!--  Place name & travel date  -->
+            <Label Margin="30,0,0,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span
+                            FontAttributes="Bold"
+                            FontSize="48"
+                            ForegroundColor="#232323"
+                            Text="{Binding SelectedDog.Name}" />
+                        <Span
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            ForegroundColor="#464646"
+                            Text="&#x0a; Life Span " />
+                        <Span
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            ForegroundColor="#464646"
+                            Text="{Binding SelectedDog.LifeSpan}" />
+                        <Span
+                            FontAttributes="Italic"
+                            FontSize="12"
+                            ForegroundColor="#303030"
+                            Text="&#x0a; Breed group " />
+                        <Span
+                            FontAttributes="Italic"
+                            FontSize="12"
+                            ForegroundColor="#303030"
+                            Text="{Binding SelectedDog.BreedGroup}" />
+
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+        </StackLayout>
+        <Label Margin="30,0,0,0">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span
+                        FontAttributes="Bold"
+                        FontSize="28"
+                        ForegroundColor="#232323"
+                        Text="Temperament &#x0a;" />
+                    <Span
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        ForegroundColor="#515151"
+                        Text="{Binding SelectedDog.Temperament}" />
+
+
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </StackLayout>
+</ContentPage>

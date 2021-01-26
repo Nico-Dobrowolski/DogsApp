@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DogsApp.Views.Home"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding MyTitre}">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto">
+                <Entry
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Placeholder="Rechercher .. "
+                    Text="{Binding Search}" />
+                <Picker
+                    Title="BreedGroup"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    ItemsSource="{Binding ListBreedGroup}"
+                    SelectedItem="{Binding SelectedBreedGroup}" />
+            </Grid>
+
+            <CollectionView
+                ItemsSource="{Binding Dogs}"
+                SelectedItem="{Binding SelectedDog}"
+                SelectionChangedCommand="{Binding SelectionCommand}"
+                SelectionMode="Single"
+                VerticalOptions="Fill">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto,Auto">
+                            <Frame
+                                Padding="0"
+                                BackgroundColor="#616161"
+                                CornerRadius="100"
+                                HeightRequest="50"
+                                HorizontalOptions="Center"
+                                IsClippedToBounds="True"
+                                WidthRequest="50">
+                                <Image
+                                    HorizontalOptions="Center"
+                                    Source="{Binding Url}"
+                                    VerticalOptions="Center" />
+                            </Frame>
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="Medium"
+                                LineBreakMode="TailTruncation"
+                                MaxLines="2"
+                                Text="{Binding Name}" />
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                FontAttributes="None"
+                                LineBreakMode="NoWrap"
+                                Text="{Binding BreedFor}"
+                                VerticalOptions="End" />
+                        </Grid>
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

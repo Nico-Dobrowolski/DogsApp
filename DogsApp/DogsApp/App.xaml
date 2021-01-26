@@ -1,8 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DogsApp.App">
+<Application
+    x:Class="DogsApp.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+
     <Application.Resources>
+
+        <Color x:Key="PrimaryColor">#001AF1</Color>
+        <Color x:Key="SecondaryColor">#A0A0A0</Color>
+        <Color x:Key="PrimaryTextColor">#EFECEC</Color>
+        <Color x:Key="SecondaryTextColor">Black</Color>
+        <Color x:Key="ActionColor">#FFB300</Color>
+
+        <Style x:Key="TitleStyle" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="TextColor" Value="{StaticResource ActionColor}" />
+        </Style>
+
+
+
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryColor}" />
+            <Setter Property="BarTextColor" Value="{StaticResource PrimaryTextColor}" />
+        </Style>
+
+        <Style TargetType="ContentPage">
+            <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColor}" />
+            <Setter Property="Padding" Value="5" />
+        </Style>
+
+
 
     </Application.Resources>
 </Application>
