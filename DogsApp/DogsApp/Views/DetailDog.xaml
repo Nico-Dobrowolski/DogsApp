@@ -71,8 +71,18 @@
                     <Span
                         FontAttributes="Bold"
                         FontSize="18"
-                        ForegroundColor="#515151"
+                        ForegroundColor="#232323"
                         Text="{Binding SelectedDog.Temperament}" />
+                    <Span
+                        FontAttributes="Bold"
+                        FontSize="28"
+                        ForegroundColor="#232323"
+                        Text="&#x0a; Breed for &#x0a;" />
+                    <Span
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        ForegroundColor="#232323"
+                        Text="{Binding SelectedDog.BreedFor}" />
 
 
                 </FormattedString>
